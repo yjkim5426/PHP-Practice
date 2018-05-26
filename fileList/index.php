@@ -26,7 +26,6 @@
 	?>
 </ol>
 
-<li><a href="read.php?id=$fileName['basename']"></a></li>
 <a href="create.php"><input type="button" value="Create"></a>
 	
 </body>

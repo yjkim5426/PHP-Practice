@@ -5,6 +5,7 @@
 </head>
 <body>
 <a href="index.php"><h1>List</h1></a>
+
 <ol>
 	<?php
 		// scan file-names from data folder
@@ -20,15 +21,28 @@
 		$fileName;
 		for ($i=2; $i<=$arraySize+1 ; $i++) { 
 			$fileName = pathinfo($scanned_directory[$i]);
-			echo '<li>'.$fileName['filename'].'</li>';
+			echo '<li><a href="read.php?id=' .$fileName['basename']. '">' .$fileName['filename'].'</a></li>';
 		}
 	?>
 </ol>
+
 <a href="create.php"><input type="button" value="Create"></a>
 <a href="delete.php"><input type="button" value="Delete"></a>
 <a href="edit.php"><input type="button" value="Edit"></a>
 
-<h2>read test title</h2>
-<p>read test contents</p>
+<h2>
+	<?php
+		$fileName = pathinfo($_GET['id']);
+		echo $fileName['filename'];
+	?>
+</h2>
+
+<p>
+<?php
+	$content = file_get_contents('data/'.$_GET['id']);
+	echo $content;
+?>
+</p>
+
 </body>
 </html>
