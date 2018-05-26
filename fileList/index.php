@@ -21,10 +21,12 @@
 		$fileName;
 		for ($i=2; $i<=$arraySize+1 ; $i++) { 
 			$fileName = pathinfo($scanned_directory[$i]);
-			echo '<li>'.$fileName['filename'].'</li>';
+			echo '<li><a href="read.php?id=' .$fileName['basename']. '">' .$fileName['filename'].'</a></li>';
 		}
 	?>
 </ol>
+
+<li><a href="read.php?id=$fileName['basename']"></a></li>
 <a href="create.php"><input type="button" value="Create"></a>
 	
 </body>
