@@ -7,12 +7,22 @@
 <a href="index.php"><h1>List</h1></a>
 
 <ol>
-	<li><a href="read.php">test</a></li>
-	<li><a href="read.php">test</a></li>
-	<li><a href="read.php">test</a></li>
-	<li><a href="read.php">test</a></li>
 	<?php
+		// scan file-names from data folder
+		$directory = 'data';
+		
+		// rid of the dots
+		$scanned_directory = array_diff(scandir($directory), array('..', '.'));
 
+		// count the files
+		$arraySize = sizeof($scanned_directory);
+
+		// make a list from scaned files
+		$fileName;
+		for ($i=2; $i<=$arraySize+1 ; $i++) { 
+			$fileName = pathinfo($scanned_directory[$i]);
+			echo '<li>'.$fileName['filename'].'</li>';
+		}
 	?>
 </ol>
 
