@@ -28,10 +28,7 @@
 
 <a href="create.php"><input type="button" value="Create"></a>
 <?php echo '<a href="delete_process.php?id=' .$_GET['id']; ?>"><input type="button" value="Delete"></a>
-<a href="edit.php"><input type="button" value="Edit"></a>
-
-
-
+<?php echo '<a href="edit.php?id=' .$_GET['id']; ?>"><input type="button" value="Edit"></a>
 
 <h2>
 	<?php
