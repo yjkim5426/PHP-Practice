@@ -27,12 +27,17 @@
 </ol>
 
 <h2>Create a new file.</h2>
-<input type="text" name="" placeholder="title">
-<Br>
-<textarea placeholder="insert the contents"></textarea>
-<br>
-<input type="button" value="Save">
-<a href="index.php"><input type="button" value="Cancel"></a>
+
+<form action='create_process.php' method="POST">
+	<input type="text" name="title" placeholder="title">
+	<Br>
+	<textarea name="description" placeholder="insert the contents"></textarea>
+	<br>
+
+	<!-- buttons -->
+	<input type="submit" value="Save">
+	<a href="index.php"><input type="button" value="Cancel"></a>
+</form>
 
 </body>
 </html>
